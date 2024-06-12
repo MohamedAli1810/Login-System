@@ -12,6 +12,11 @@ if (localStorage.getItem('signuparray') == null) {
     signuparray = JSON.parse(localStorage.getItem('signuparray'))
 }
 function signUp(){
+    var signUP = {
+        name : signupName.value,
+        email : signupEmail.value,
+        password : signupPassword.value
+    }
     if(signupName.value == "" || signupEmail.value == "" || signupPassword.value == ""){
         document.querySelector('#success').classList.remove('text-success')
         document.querySelector('#success').classList.add('text-danger')
@@ -20,11 +25,6 @@ function signUp(){
                 // console.log("3");
     }else{
         // console.log("4");
-        var signUP = {
-            name : signupName.value,
-            email : signupEmail.value,
-            password : signupPassword.value
-        }
         if(signuparray.length == 0 ){
         // console.log("8");
             signuparray.push(signUP);
@@ -35,33 +35,29 @@ function signUp(){
             document.getElementById('success').innerHTML = "success"
             return true;
         }else{
-        // console.log("6");
-        for (let i = 0; i < signuparray.length; i++){
-            // console.log("9")
-        if (signuparray[i].email == signUP.email){
-            // console.log("11")
+            var emailexits ;
+            for (let i = 0; i < signuparray.length; i++){
+                if (signuparray[i].email == signUP.email){
+                    emailexits = true;
+                    break;   
+                }
+                }
+
+        if (emailexits){
+
         document.querySelector('#success').classList.remove('text-success')
         document.querySelector('#success').classList.add('text-danger')
-        document.getElementById('success').innerHTML = "All inputs is required"
-        return false;
+        document.getElementById('success').innerHTML = "Email Exits"
+
        }else{
-        // console.log("7");
-        var signUP = {
-            name : signupName.value,
-            email : signupEmail.value,
-            password : signupPassword.value
-        }
         signuparray.push(signUP);
         localStorage.setItem("signuparray",JSON.stringify(signuparray))
-        // console.log(signuparray);
         document.querySelector('#success').classList.add('text-success')
         document.querySelector('#success').classList.remove('text-danger')
         document.getElementById('success').innerHTML = "success"
-        return true;
     }
-    }}
-    // console.log("5");
-    // console.log(signuparray);
+    }
+
     }}
 function addd(){
     document.querySelector('div.logg').classList.remove('d-none')
