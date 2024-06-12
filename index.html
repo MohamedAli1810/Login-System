@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- (((((((((((( [ Title ] )))))))))))) -->
+    <title>Smart Login</title>
+    <!-- (((((((((((( [ Fonts ] )))))))))))) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- (((((((((((( [ Css ] )))))))))))) -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+
+    <main class="vh-100 ">
+        <nav class="navbar navl d-none bg-transparent">
+            <div class="container-fluid justify-content-around">
+              <a class="navbar-brand text-white text-decoration-none">Smart Login</a>
+                <button class="btn btn-outline-success" onclick="logout();" type="submit">Log Out</button>
+            </div>
+          </nav>
+        <div class="container d-flex justify-content-center p-5" id="progressBa">
+            <div class="log w-75 d-flex flex-column  align-items-center shadow p-5">
+                <h1>Smart Login System</h1>
+                <input id="signinE" class="form-control my-3 log-input" placeholder="Enter your Email" type="text">
+                <input id="signinP" class="form-control my-3 log-input" placeholder="Enter your Password" type="password">
+                <p id="incorrect" class="text-danger"></p>
+                <button onclick="login();" class="btn btn-outline-info w-100 my-3">Login</button>
+                <p class="text-white">Don’t have an account ? <a onclick="addd();" class='text-white'> Sign Up </a></p>
+            </div>
+            <div class="logg w-75 d-none flex-column align-items-center shadow p-5" id="progressBar">
+                <h1> Sign Up </h1>
+                <input id="signupName" class="form-control my-3 log-input" placeholder="Enter your Name" type="text">
+                <input id="signupEmail" class="form-control my-3 log-input" placeholder="Enter your Email" type="text">
+                <input id="signupPassword" class="form-control my-3 log-input" placeholder="Enter your Password" type="password">
+                <p id="success" class="text-success"></p>
+                <button onclick="signUp();" class="btn btn-outline-info w-100 my-3">Sign Up</button>
+                <p class="text-white">have you an account ? <a onclick="signIn();" class='text-white'>Sign In</a></p>
+            </div>
+            <div class="loggg w-75 d-none flex-column  align-items-center shadow p-5">
+
+                <h1 id="wel" class="text-white"></h1>
+            </div>
+        </div>
+    </main>
+    <!-- (((((((((((( [ JS File ] )))))))))))) -->
+    <script src="./JS/index.js"></script>
+</body>
+</html>

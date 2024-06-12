@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Titillium Web';
+
+}
+main{
+    background-color: #24353F;
+}
+.log h1{
+    color: #14A2B8;
+}
+.logg h1{
+    color: #14A2B8;
+}
+.log-input{
+    background-color: transparent;
+    color: aqua;
+    color: #14A2B8;
+}
+input ::placeholder{
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    transition: all 500ms;
+}
+a:hover{
+    text-decoration: underline;
+    transition: all 500ms;
+    cursor: pointer;
+}
